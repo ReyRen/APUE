@@ -38,7 +38,11 @@ int main(void)
 	}
 	open("/dev/null", O_RDWR);//将0号给了/dev/null
 	dup(0);
-	dup(1);
+	dup(0);
+	/*
+		这列为什么执行这三个语句，
+		是为了将stdin, out, err全部都给了/dev/null这个设备而不是终端，这样就不会打印到前台终端东西了
+	*/
 
 	while(1)
 	{
