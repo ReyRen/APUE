@@ -2,7 +2,7 @@
 CC=gcc
 CFLAGS=-Werror -Wall -g
 
-BIN=signalstatus sigqueue
+BIN=signalstatus sigqueue all
 all:$(BIN)
 %.o:%.c
 	$(CC) $(CFLAGS) -c $< -o $@
