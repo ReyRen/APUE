@@ -1,0 +1,15 @@
+NY:clean all
+CC=gcc
+CFLAGS=-Werror -Wall -g -D_GNU_SOURCE -D__USE_XOPEN -D_MIME_TYPE_
+BIN=sws
+all:$(BIN)
+sws:sws.o handle.o connect.o init.o util.o
+	$(CC) $(CFLAGS) sws.o handle.o connect.o init.o util.o -lmagic -lc -o $@
+%.o:%.c
+	$(CC) $(CFLAGS) -c $< -o $@
+	
+#srv2:srv2.o sckutil.o
+#	$(CC) $(CFLAGS) $^ -o $@
+
+clean:
+	rm -f *.o $(BIN)
