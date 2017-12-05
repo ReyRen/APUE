@@ -1,0 +1,23 @@
+CS 631 Final Project SWS/1.0
+
+
+GROUP MEMBER: 
+	Yuan Ren(yren14) / Zhitao Chen(zchen69)
+USAGE: 
+	make -f makefile.[Ubuntu/NetBSD/SunOS]
+       ./sws [usage like man page]
+       make -f makefile.[Ubuntu/NetBSD/SunOS] clean
+FUNCTION: 
+	implemented all function on the man page
+	implemented HTTP/0.9 simple request
+	implemented HTP/1.0 full request
+	implemented GET/HEAD request method
+	implemented mime type on Ubuntu/NetBSD/SunOS
+	implemented all test on Ubuntu/NetBSD/SunOS
+	implemented the directory '/' problem both on server side 
+			or client side
+	implemented three time format according to the HTTP/1.0
+	implemented V4 and V6
+	implemented all return value 
+	implemented all magic number
+	
