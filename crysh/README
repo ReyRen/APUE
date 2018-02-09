@@ -1,0 +1,29 @@
+PROJECT NAME:
+	crysh
+PLATFORM:
+	NetBSD 7.0
+HOW TO EXECUTE;
+	make
+	echo "[...]" | openssl enc -aes-256-cbc -md sha1 | ./crysh
+	make clean
+FUNCTION:
+	All the function on the man page
+TEST:
+	export CRYSH_PASSWORD="bacon"
+	echo "foo" | ./crysh
+	echo "date" | openssl enc -aes-256-cbc -md sha1 | ./crysh
+	echo "date; whoami" | openssl enc -aes-256-cbc -md sha1 | ./crysh
+	echo "date; whoami; ls -l" | openssl enc -aes-256-cbc -md sha1 | ./crysh
+	echo "ls -l /etc; ls /nowhere; whoami" | openssl enc -aes-256-cbc -md sha1 | ./crysh
+	echo "date >a.txt; ls -l /etc >b.txt; whoami" | openssl enc -aes-256-cbc -md sha1 | ./crysh
+	echo "date >a.txt; ls -l /nowhere >b.txt; whoami" | openssl enc -aes-256-cbc -md sha1 | ./crysh
+	echo "date >>a.txt; ls -l /nowhere 2>b.txt; whoami" | openssl enc -aes-256-cbc -md sha1 | ./crysh
+	echo "date 2>a.txt; ls -l /nowhere >>b.txt; whoami" | openssl enc -aes-256-cbc -md sha1 | ./crysh
+	echo "ls -l ../../etc; whoami" | openssl enc -aes-256-cbc -md sha1 | ./crysh
+	echo "ls -l / >../../b.txt; whoami" | openssl enc -aes-256-cbc -md sha1 | ./crysh
+	unset CRYSH_PASSWORD
+		all same with previous results except that the
+		user should input the decrypt passwd.
+AUTHOR:
+	YUAN REN 12/14/2017
+
